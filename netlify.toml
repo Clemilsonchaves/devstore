@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "build/"
+
+# Redirecionamentos, headers, etc.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
