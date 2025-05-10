@@ -7,7 +7,7 @@ async function getFeaturedProducts(): Promise<Product[]> {
   const response = await api('/products/featured', {
       
       next: {
-        revalidate: 60 * 60, // 1 hour
+        revalidate: 5, 
       },
     });
 
@@ -85,4 +85,3 @@ export default async function Home() {
     </div>
   );
 }
- 
