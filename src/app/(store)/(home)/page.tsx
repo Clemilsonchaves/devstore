@@ -1,4 +1,4 @@
-import Link  from "next/link";
+import Link  from "next/link"; 
 import Image from "next/image";
 import { api } from "@/data/api";
 import { Product } from "@/data/types/product";
