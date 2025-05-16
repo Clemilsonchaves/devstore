@@ -1,9 +1,9 @@
-'use client";'
+'use client';
 
 import { createContext, useContext, ReactNode, useState } from "react";
 
 interface CartItem {
-    productId: string;
+    productId: number;
     quantity: number;
 }
 
@@ -19,23 +19,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
     function addToCart(productId: string) {
         setCartItems((state) => {
-            const productInCart = state.some((item) => item.productId === productId)
+            const productInCart = state.some((item) => item.productId === Number(productId))
 
             if (productInCart) {
                 return state.map((item) => {
-                    if (item.productId === productId) {
+                    if (item.productId === Number(productId)) {
                         return { ...item, quantity: item.quantity + 1 };
                     } else {
                         return item;
                     }
                 });
             } else {
-                return [...state, { productId, quantity: 1 }];
+                return [...state, { productId: Number(productId), quantity: 1 }];
             }
         });
-                
-    
-
     }
     return (
         <CartContext.Provider value={{ items: cartItems, addToCart }}>
@@ -44,4 +41,4 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
 }
 
-export const useCart = () => () => useContext(CartContext);
+export const useCart = () => useContext(CartContext);

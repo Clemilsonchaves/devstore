@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     template: '%s | devstore',
     default: 'devstore',
   },
+  metadataBase: new URL('https://devstore.com.br'),
 }
 
 export default function RootLayout({
