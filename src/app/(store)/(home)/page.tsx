@@ -38,8 +38,8 @@ export default async function Home() {
        <Image 
        src={highlightedProduct.image} 
        alt="Moleton" 
-       width={860} 
-       height={860}
+       width={840} 
+       height={840}
        quality={100}
        className="group-hover:scale-110 transition-transform duration-300 ease-in-out"
        />
